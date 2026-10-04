@@ -1,0 +1,24 @@
+{
+  "_comment": "Пример политики RedactProxy. Действия: mask (обратимо), redact (необратимо), block (отклонить запрос), allow (пропустить).",
+  "actions": {
+    "EMAIL": "mask",
+    "PHONE": "mask",
+    "SSN": "block",
+    "IP_ADDRESS": "allow",
+    "EMP_ID": "mask"
+  },
+  "disabled": [],
+  "allowlist": ["support@example.com"],
+  "custom": [
+    {
+      "name": "emp_id",
+      "pattern": "\\bEMP-\\d{5}\\b",
+      "ignore_case": false,
+      "group": 0,
+      "priority": 45,
+      "action": "mask"
+    }
+  ],
+  "unmask_responses": true,
+  "passthrough_binary": false
+}
