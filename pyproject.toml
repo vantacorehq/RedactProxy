@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "redactproxy"
+version = "0.1.0"  # держите в синхроне с __version__ в redactproxy.py
+description = "Прокси-шлюз, маскирующий PII и секреты в запросах к LLM API (без зависимостей)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Security",
+]
+
+[project.scripts]
+redactproxy = "redactproxy:main"
+
+[tool.setuptools]
+py-modules = ["redactproxy"]
